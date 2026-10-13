@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scanned PDF to text or Markdown: OCR options compared (free and API)</title><meta name="description" content="Convert scanned or born-digital PDFs to clean text or Markdown: ocrmypdf + Tesseract, Python libraries, and a pay-per-page cloud option."><link rel="canonical" href="https://philippprimisser-max.github.io/pp-guides/scanned-pdf-to-markdown/">
+<meta property="og:title" content="Scanned PDF to text or Markdown: OCR options compared (free and API)"><meta property="og:description" content="Convert scanned or born-digital PDFs to clean text or Markdown: ocrmypdf + Tesseract, Python libraries, and a pay-per-page cloud option."><meta property="og:type" content="article"><meta property="og:url" content="https://philippprimisser-max.github.io/pp-guides/scanned-pdf-to-markdown/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Scanned PDF to text or Markdown: OCR options compared (free and API)", "description": "Convert scanned or born-digital PDFs to clean text or Markdown: ocrmypdf + Tesseract, Python libraries, and a pay-per-page cloud option.", "url": "https://philippprimisser-max.github.io/pp-guides/scanned-pdf-to-markdown/", "step": [{"@type": "HowToStep", "name": "Born-digital PDFs"}, {"@type": "HowToStep", "name": "Scanned PDFs, free and local"}, {"@type": "HowToStep", "name": "Vision-LLM OCR"}, {"@type": "HowToStep", "name": "Many PDFs from URLs, no setup"}, {"@type": "HowToStep", "name": "Checklist"}]}</script>
+<style>body{font:17px/1.6 system-ui,sans-serif;max-width:760px;margin:0 auto;padding:1.2rem;color:#222}pre{background:#f4f4f4;padding:.8rem;overflow:auto}code{background:#f4f4f4;padding:0 .2rem}a{color:#0a58ca}.n{font-size:.85rem;color:#666;border-top:1px solid #ddd;margin-top:2rem;padding-top:.6rem}h2{margin-top:1.6rem}</style></head><body><p><a href="/pp-guides/">Creator &amp; data guides</a></p><h1>Scanned PDF to text or Markdown: OCR options compared (free and API)</h1>
+<p>First find out which kind of PDF you have. Try selecting text in a viewer: if you can, it is <b>born-digital</b> and you don't need OCR. If not, it is a <b>scan</b> (an image per page) and you need OCR.</p>
+<h2>Born-digital PDFs</h2>
+<ul><li><code>pdftotext -layout file.pdf out.txt</code> (poppler) for plain text.</li>
+<li>Python: <code>pymupdf4llm.to_markdown("file.pdf")</code> keeps headings, lists and tables as Markdown, handy for LLM/RAG pipelines.</li></ul>
+<h2>Scanned PDFs, free and local</h2>
+<pre>ocrmypdf --deskew --clean -l eng+deu scan.pdf searchable.pdf
+pdftotext -layout searchable.pdf scan.txt</pre>
+<p>ocrmypdf uses Tesseract and adds a text layer. Install the right language packs (<code>tesseract-ocr-deu</code> etc.). Quality depends heavily on the scan: 300 dpi, straight pages and good contrast matter more than the engine. Old typefaces like Fraktur need their own model.</p>
+<h2>Vision-LLM OCR</h2>
+<p>Newer models (e.g. Mistral OCR, open models such as PaddleOCR or DeepSeek-OCR) handle complex layouts and tables better, but need a GPU or a paid API, and can occasionally "fix" text that wasn't there. Check numbers carefully.</p>
+<h2>Many PDFs from URLs, no setup</h2>
+<p>The <a href="https://apify.com/prime619/pdf-to-text-markdown-ocr">PDF to Text &amp; Markdown (OCR)</a> Actor on Apify takes PDF URLs, detects per page whether OCR is needed, cleans up scans before Tesseract (19 languages including Fraktur), and returns text and Markdown per page. Text pages are billed for at most 15 pages per PDF, OCR per page; failed files are free.</p>
+<h2>Checklist</h2>
+<ul><li>Spot-check numbers, dates and names against the image.</li><li>Keep the page number with each chunk if you feed it into search or an LLM.</li></ul>
+<p class="n">AI-assisted guide. Updated October 2026. Some links go to our own products on Gumroad and Apify.</p></body></html>

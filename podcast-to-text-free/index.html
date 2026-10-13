@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Podcast to text: 4 free and cheap ways to transcribe a podcast episode</title><meta name="description" content="Turn a podcast episode into text: check for an existing transcript, use Whisper locally, or transcribe from an RSS/Apple/Spotify link. With costs and accuracy tips."><link rel="canonical" href="https://philippprimisser-max.github.io/pp-guides/podcast-to-text-free/">
+<meta property="og:title" content="Podcast to text: 4 free and cheap ways to transcribe a podcast episode"><meta property="og:description" content="Turn a podcast episode into text: check for an existing transcript, use Whisper locally, or transcribe from an RSS/Apple/Spotify link. With costs and accuracy tips."><meta property="og:type" content="article"><meta property="og:url" content="https://philippprimisser-max.github.io/pp-guides/podcast-to-text-free/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "Podcast to text: 4 free and cheap ways to transcribe a podcast episode", "description": "Turn a podcast episode into text: check for an existing transcript, use Whisper locally, or transcribe from an RSS/Apple/Spotify link. With costs and accuracy tips.", "url": "https://philippprimisser-max.github.io/pp-guides/podcast-to-text-free/", "step": [{"@type": "HowToStep", "name": "1. Look for an existing transcript (free)"}, {"@type": "HowToStep", "name": "2. Whisper on your own computer (free, slower)"}, {"@type": "HowToStep", "name": "3. Hosted Whisper by the minute"}, {"@type": "HowToStep", "name": "4. From a link, no setup"}, {"@type": "HowToStep", "name": "Accuracy tips"}]}</script>
+<style>body{font:17px/1.6 system-ui,sans-serif;max-width:760px;margin:0 auto;padding:1.2rem;color:#222}pre{background:#f4f4f4;padding:.8rem;overflow:auto}code{background:#f4f4f4;padding:0 .2rem}a{color:#0a58ca}.n{font-size:.85rem;color:#666;border-top:1px solid #ddd;margin-top:2rem;padding-top:.6rem}h2{margin-top:1.6rem}</style></head><body><p><a href="/pp-guides/">Creator &amp; data guides</a></p><h1>Podcast to text: 4 free and cheap ways to transcribe a podcast episode</h1>
+<p>Before you transcribe anything, check whether a transcript already exists. Then pick the cheapest method that is accurate enough.</p>
+<h2>1. Look for an existing transcript (free)</h2>
+<p>Many shows publish transcripts in their RSS feed using the Podcasting 2.0 <code>&lt;podcast:transcript&gt;</code> tag, or on their website. Apple Podcasts and Spotify display auto-generated transcripts in their apps for many episodes, but don't offer an export. See <a href="/pp-guides/download-podcast-transcripts/">how to download podcast transcripts from RSS</a>.</p>
+<h2>2. Whisper on your own computer (free, slower)</h2>
+<pre>pip install -U openai-whisper
+whisper episode.mp3 --model small --language en --output_format txt</pre>
+<p><code>small</code> is a good balance on a laptop; <code>medium</code>/<code>large</code> are more accurate but much slower without a GPU. Convert first if the file is huge: <code>ffmpeg -i ep.mp3 -ac 1 -ar 16000 ep.wav</code>.</p>
+<h2>3. Hosted Whisper by the minute</h2>
+<p>Services running Whisper large-v3 (for example Groq's API) transcribe an hour in well under a minute for a few cents. You need an API key and a little scripting.</p>
+<h2>4. From a link, no setup</h2>
+<p>The <a href="https://apify.com/prime619/podcast-transcriber">Podcast Transcriber</a> on Apify takes an RSS feed, Apple Podcasts link or direct MP3 URL and returns TXT, SRT, VTT and JSON with word timestamps. It runs with or without your own Groq key and is billed per audio minute; Apify's free plan credit is enough to try it on a few short episodes.</p>
+<h2>Accuracy tips</h2>
+<ul><li>Set the language explicitly instead of auto-detect for non-English shows.</li>
+<li>Expect errors on names, jargon and crosstalk; search the transcript for proper nouns before publishing.</li>
+<li>Only transcribe content you have the rights to use for your purpose.</li></ul>
+<p>Free download: <a href="https://pppioneer54.gumroad.com/l/transcription-workflow-cheatsheet">Transcription workflow cheat sheet</a> (local vs. hosted Whisper, settings, clean-up).</p>
+<p class="n">AI-assisted guide. Updated October 2026. Some links go to our own products on Gumroad and Apify.</p></body></html>
