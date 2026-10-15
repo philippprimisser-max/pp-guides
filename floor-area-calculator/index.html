@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free floor area calculator (m² and sq ft) for rental listings</title>
+<style>body{font-family:system-ui,sans-serif;max-width:700px;margin:2rem auto;padding:0 1rem}input{width:6em}td{padding:.2rem}</style></head><body>
+<h1>Floor area calculator</h1><p>Add each room's length and width. You get the total in m² and sq ft, ready for your listing.</p>
+<label>Unit <select id="u"><option value="m">meters</option><option value="ft">feet</option></select></label>
+<table id="t"><tr><th>Room</th><th>Length</th><th>Width</th><th>Area</th></tr></table>
+<button onclick="add()">+ room</button>
+<h2 id="sum">Total: 0 m² / 0 sq ft</h2>
+<p>Need a clean floor plan with every room and bed for your listing? I draw them for $19 per unit (<a href="mailto:95ppp619@gmail.com?subject=Floor%20plan%20%2419">my own service</a>).</p>
+<p><small>Approximate: rectangles only, no wall thickness. Made by Philipp Primisser, Vienna · <a href="/pp-guides/about/">Imprint &amp; privacy</a></small></p>
+<script>
+const t=document.getElementById('t');
+function add(n=''){const r=t.insertRow();r.innerHTML=`<td><input value="${n}" style="width:9em"></td><td><input type=number step=.01 oninput=calc()></td><td><input type=number step=.01 oninput=calc()></td><td class=a>0</td>`}
+function calc(){const ft=document.getElementById('u').value=='ft';let s=0;for(const r of [...t.rows].slice(1)){const i=r.querySelectorAll('input'),a=(+i[1].value||0)*(+i[2].value||0);r.querySelector('.a').textContent=a.toFixed(2);s+=a}
+const m2=ft?s*0.09290304:s;document.getElementById('sum').textContent=`Total: ${m2.toFixed(1)} m² / ${(m2/0.09290304).toFixed(0)} sq ft`}
+document.getElementById('u').onchange=calc;['Living room','Bedroom','Kitchen','Bathroom'].forEach(add);
+</script></body></html>
