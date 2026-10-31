@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How I cut a 60-minute podcast into 5 Shorts in under an hour (free + paid tools)</title><meta name="description" content="A step-by-step workflow to turn one long podcast episode into five vertical Shorts: transcript, picking moments, word-by-word captions and 9:16 export."><link rel="canonical" href="https://philippprimisser-max.github.io/pp-guides/podcast-to-5-shorts/">
+<meta property="og:title" content="How I cut a 60-minute podcast into 5 Shorts in under an hour (free + paid tools)"><meta property="og:description" content="A step-by-step workflow to turn one long podcast episode into five vertical Shorts: transcript, picking moments, word-by-word captions and 9:16 export."><meta property="og:type" content="article"><meta property="og:url" content="https://philippprimisser-max.github.io/pp-guides/podcast-to-5-shorts/">
+<style>body{font:17px/1.6 system-ui,sans-serif;max-width:760px;margin:0 auto;padding:1.2rem;color:#222}pre{background:#f4f4f4;padding:.8rem;overflow:auto}code{background:#f4f4f4;padding:0 .2rem}a{color:#0a58ca}.n{font-size:.85rem;color:#666;border-top:1px solid #ddd;margin-top:2rem;padding-top:.6rem}h2{margin-top:1.6rem}.cta{background:#f1f6ff;border-left:4px solid #0a58ca;padding:.7rem .9rem;margin:1.2rem 0}.rel{margin-top:2rem}</style></head><body><p><a href="/pp-guides/">Creator &amp; data guides</a></p>
+<div class="cta"><b>Werbung / Affiliate disclosure:</b> this guide contains an affiliate link to OpusClip (marked below). If you subscribe through it, I may get a commission, at no extra cost to you.</div>
+<h1>How I cut a 60-minute podcast into 5 Shorts in under an hour (free + paid tools)</h1>
+<p>One long episode can feed a week of Shorts. The workflow below takes about an hour for a 60-minute episode and works with free tools; one optional paid tool can do the clip-picking for you.</p>
+<h2>1. Get a transcript with timestamps</h2>
+<p>Run Whisper locally (free) or use one of the options in <a href="/pp-guides/podcast-to-text-free/">podcast to text</a>. You need timestamps, because every later step works from the text instead of scrubbing audio.</p>
+<h2>2. Pick the 5 best moments</h2>
+<p><b>Manually:</b> skim the transcript for strong opinions, numbers, stories with a turn and concrete advice. Each clip should be 20–60 seconds and its first sentence should work as a hook without context. Details: <a href="/pp-guides/find-best-clips-in-podcast/">how to find the best clips in a podcast</a>; hook ideas: <a href="https://pppioneer54.gumroad.com/l/hook-library-podcast-clips">Hook library for podcast clips</a>.</p>
+<p><b>Automatically:</b> <a href="https://tolt.link/pptools" rel="sponsored nofollow noopener" target="_blank">OpusClip</a> <small>(Werbung/Affiliate-Link · Ad / affiliate link)</small> finds candidate clips and reframes them to vertical in the browser. It is fast, but it is a paid subscription beyond the free tier and its picks do not always match what your audience cares about, so review every clip before posting.</p>
+<p>Cut each moment with ffmpeg: <code>ffmpeg -ss 00:12:03 -to 00:12:51 -i ep.mp4 -c:v libx264 -c:a aac clip1.mp4</code></p>
+<h2>3. Add word-by-word captions</h2>
+<p>Most Shorts are watched muted. Burn in word-by-word captions for free: <a href="/pp-guides/word-by-word-captions-free/">word-by-word captions with Whisper + ffmpeg</a>.</p>
+<h2>4. Export 9:16 and check</h2>
+<ul><li>1080×1920, face and captions inside the safe zone (keep the bottom ~20% free for the app UI).</li>
+<li>Hook in the first 2 seconds, no dead air at the start.</li>
+<li>Consistent look: <a href="/pp-guides/free-podcast-luts-premiere-davinci/">podcast LUTs</a>.</li>
+<li>Checklist for the whole process: <a href="https://pppioneer54.gumroad.com/l/podcast-to-shorts-checklist">Podcast-to-Shorts checklist</a>.</li></ul>
+<p class="n">Guides by Philipp Primisser, Vienna, Austria. Updated November 2026.<br>*Werbung/Affiliate-Link: links marked as affiliate links earn me a commission if you subscribe through them; the price for you does not change. Gumroad links go to my own products.<br><a href="/pp-guides/about/">About, contact &amp; Impressum</a> · <a href="https://github.com/philippprimisser-max/pp-guides">Source on GitHub</a></p></body></html>
