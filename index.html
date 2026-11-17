@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#172925">
   <meta name="description" content="Digitale Visitenkarte von Dipl. Prog. Stefan Morawitz. Kontaktdaten speichern, anrufen oder Adresse öffnen.">
-  <meta name="robots" content="noindex,nofollow">
+  <meta name="robots" content="index,follow">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Dipl. Prog. Stefan Morawitz — Digitale Visitenkarte">
   <meta property="og:description" content="Kontaktdaten auf einen Blick. Direkt anrufen oder Kontakt speichern.">
-  <meta property="og:url" content="https://raw.githack.com/philippprimisser-max/pp-guides/stefan/index.html">
+  <meta property="og:url" content="https://philippprimisser-max.github.io/pp-guides/">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Stefan Morawitz">
@@ -104,7 +104,7 @@
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
     @media print{.nav-tools,.cta,.actions,.mobile-bar,.toast{display:none!important}.page{max-width:none}.hero{display:grid;grid-template-columns:1fr 1fr;gap:30px}.business-card{-webkit-print-color-adjust:exact;print-color-adjust:exact}.card-scene{padding:10px}.section-head{margin-top:30px}.bottom-panel{margin-bottom:20px}.foot{padding-bottom:0}}
   
-    .qr-stamp #site-qr{position:relative;width:168px;height:168px;display:grid;place-items:center}.qr-stamp #site-qr canvas,.qr-stamp #site-qr img{width:168px!important;height:168px!important;image-rendering:pixelated}.qr-stamp #site-qr:has(img)::after{content:"SM";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:34px;height:34px;border:3px solid #fffefb;border-radius:50%;background:#172925;color:#dfc99c;font:700 13px Georgia,serif}.qr-stamp #site-qr a{font-size:12px;text-align:center;text-decoration:underline}
+    .qr-panel{background:radial-gradient(circle at 98% 20%,#2e5040,transparent 55%),linear-gradient(140deg,#112a22,#172e26);border:1px solid #aa9062;color:#f8efe1;box-shadow:0 15px 45px #0b271c25}.qr-panel h3{color:#fff9ee}.qr-panel p{color:#c8d4cb}.qr-panel .eyebrow{color:#d8bf91}.qr-panel .eyebrow:before{background:#d8bf91}.qr-stamp{border:2px solid #c4a777;border-radius:12px;padding:12px;background:#fffdfa;box-shadow:0 12px 25px #05191044}.qr-stamp #site-qr{position:relative;width:168px;height:168px;display:grid;place-items:center}.qr-stamp #site-qr canvas,.qr-stamp #site-qr img{width:168px!important;height:168px!important;image-rendering:pixelated}.qr-stamp #site-qr:has(img)::after{content:"SM";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:34px;height:34px;border:3px solid #fffefb;border-radius:50%;background:#172925;color:#dfc99c;font:700 13px Georgia,serif}.qr-stamp #site-qr a{font-size:12px;text-align:center;text-decoration:underline;color:#172925}
   </style>
 </head>
 <body>
@@ -182,8 +182,8 @@
 
       <section class="bottom-panel" aria-label="Kontakt speichern und teilen">
         <div class="qr-panel">
-          <div><div class="eyebrow" style="margin-bottom:16px" data-i18n="qrEyebrow">Einfach scannen</div><h3 data-i18n="qrHeading">Website per QR-Code</h3><p data-i18n="qrBody">Kamera öffnen, QR-Code scannen und Stefans digitale Visitenkarte direkt im Browser öffnen.</p></div>
-          <div class="qr-stamp"><div id="site-qr" aria-label="QR-Code zur Online-Visitenkarte"><a href="https://raw.githack.com/philippprimisser-max/pp-guides/stefan/index.html">Digitale Visitenkarte öffnen</a></div></div>
+          <div><div class="eyebrow" style="margin-bottom:16px" data-i18n="qrEyebrow">Einfach scannen</div><h3 data-i18n="qrHeading">Website per QR-Code</h3><p data-i18n="qrBody">Scannen und Stefans digitale Visitenkarte direkt öffnen. Ohne App, ohne Umwege.</p></div>
+          <div class="qr-stamp"><div id="site-qr" aria-label="QR-Code zur Online-Visitenkarte"><a href="https://philippprimisser-max.github.io/pp-guides/">Digitale Visitenkarte öffnen</a></div></div>
         </div>
         <div class="note-panel">
           <div><h3 data-i18n="readyHeading">Immer griffbereit.</h3><p data-i18n="readyBody">Speichern Sie diesen Kontakt auf Ihrem Gerät und erreichen Sie Stefan jederzeit mit einem Fingertipp.</p></div>
@@ -200,12 +200,12 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
   <script>
-    window.addEventListener("load",function(){try{if(window.QRCode){var e=document.getElementById("site-qr");e.textContent="";new QRCode(e,{text:"https://raw.githack.com/philippprimisser-max/pp-guides/stefan/index.html",width:168,height:168,colorDark:"#172925",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});}}catch(err){console.warn("QR generation unavailable",err);}});
+    window.addEventListener("load",function(){try{if(window.QRCode){var e=document.getElementById("site-qr");e.textContent="";new QRCode(e,{text:"https://philippprimisser-max.github.io/pp-guides/",width:168,height:168,colorDark:"#172925",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});}}catch(err){console.warn("QR generation unavailable",err);}});
     (function(){
       'use strict';
       const translations={
-        de:{digitalCard:'Digitale Visitenkarte',share:'Teilen',eyebrow:'Persönlicher Kontakt',intro:'Alle wichtigen Kontaktdaten an einem Ort. Direkt anrufen, eine Nachricht senden oder den Kontakt mit einem Klick speichern.',save:'Kontakt speichern',call:'Anrufen',instant:'Direkt verfügbar · ohne Registrierung',personal:'Persönlicher Kontakt',contactHeading:'Kontakt aufnehmen',contactSub:'Der passende Weg für jede Anfrage. Direkt, unkompliziert und persönlich.',phone:'Telefon',phoneMeta:'Jetzt anrufen',message:'Nachricht',sms:'SMS schreiben',smsMeta:'Auf dem Smartphone öffnen',location:'Adresse',mapMeta:'In Karten öffnen',qrEyebrow:'Einfach scannen',qrHeading:'Website per QR-Code',qrBody:'Kamera öffnen, QR-Code scannen und Stefans digitale Visitenkarte direkt im Browser öffnen.',readyHeading:'Immer griffbereit.',readyBody:'Speichern Sie diesen Kontakt auf Ihrem Gerät und erreichen Sie Stefan jederzeit mit einem Fingertipp.',footer:'Persönliche digitale Visitenkarte · Wien, Österreich',copySuccess:'Link kopiert',copyLocal:'Kontaktdaten kopiert',copyFail:'Teilen auf diesem Gerät nicht verfügbar'},
-        en:{digitalCard:'Digital business card',share:'Share',eyebrow:'Personal contact',intro:'All important contact details in one place. Call directly, send a message or save this contact with one tap.',save:'Save contact',call:'Call now',instant:'Instant access · no sign-up',personal:'Personal contact',contactHeading:'Get in touch',contactSub:'The right way to connect. Direct, simple and personal.',phone:'Phone',phoneMeta:'Call now',message:'Message',sms:'Send a text',smsMeta:'Open on your phone',location:'Address',mapMeta:'Open in Maps',qrEyebrow:'Scan & save',qrHeading:'Website via QR code',qrBody:'Open your camera and scan the code to visit Stefan’s digital business card.',readyHeading:'Always close at hand.',readyBody:'Save these details on your device and reach Stefan any time with a tap.',footer:'Personal digital business card · Vienna, Austria',copySuccess:'Link copied',copyLocal:'Contact details copied',copyFail:'Sharing is not available on this device'}
+        de:{digitalCard:'Digitale Visitenkarte',share:'Teilen',eyebrow:'Persönlicher Kontakt',intro:'Alle wichtigen Kontaktdaten an einem Ort. Direkt anrufen, eine Nachricht senden oder den Kontakt mit einem Klick speichern.',save:'Kontakt speichern',call:'Anrufen',instant:'Direkt verfügbar · ohne Registrierung',personal:'Persönlicher Kontakt',contactHeading:'Kontakt aufnehmen',contactSub:'Der passende Weg für jede Anfrage. Direkt, unkompliziert und persönlich.',phone:'Telefon',phoneMeta:'Jetzt anrufen',message:'Nachricht',sms:'SMS schreiben',smsMeta:'Auf dem Smartphone öffnen',location:'Adresse',mapMeta:'In Karten öffnen',qrEyebrow:'Einfach scannen',qrHeading:'Website per QR-Code',qrBody:'Scannen und Stefans digitale Visitenkarte direkt öffnen. Ohne App, ohne Umwege.',readyHeading:'Immer griffbereit.',readyBody:'Speichern Sie diesen Kontakt auf Ihrem Gerät und erreichen Sie Stefan jederzeit mit einem Fingertipp.',footer:'Persönliche digitale Visitenkarte · Wien, Österreich',copySuccess:'Link kopiert',copyLocal:'Kontaktdaten kopiert',copyFail:'Teilen auf diesem Gerät nicht verfügbar'},
+        en:{digitalCard:'Digital business card',share:'Share',eyebrow:'Personal contact',intro:'All important contact details in one place. Call directly, send a message or save this contact with one tap.',save:'Save contact',call:'Call now',instant:'Instant access · no sign-up',personal:'Personal contact',contactHeading:'Get in touch',contactSub:'The right way to connect. Direct, simple and personal.',phone:'Phone',phoneMeta:'Call now',message:'Message',sms:'Send a text',smsMeta:'Open on your phone',location:'Address',mapMeta:'Open in Maps',qrEyebrow:'Scan & save',qrHeading:'Website via QR code',qrBody:'Scan to open Stefan’s digital business card directly. No app required.',readyHeading:'Always close at hand.',readyBody:'Save these details on your device and reach Stefan any time with a tap.',footer:'Personal digital business card · Vienna, Austria',copySuccess:'Link copied',copyLocal:'Contact details copied',copyFail:'Sharing is not available on this device'}
       };
       let language='de';
       const notice=document.getElementById('toast');let timeout;
